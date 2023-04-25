@@ -1,0 +1,16 @@
+const bgimg = "assets/images/Background.png";
+const lock ="assets/images/Lock.png";
+const accessibility = "assets/images/accessibility.png";
+const antivirus = "assets/images/antivirus.png";
+const applock = "assests/images/app lock.png";
+const battery3d = "assests/images/Battery3d.png";
+const boost = "assests/images/boost.png";
+const cooler3d = "assests/images/Cooler3d.png";
+const data3d = "assests/images/Data 3d.png";
+const defender = "assests/images/defender.png";
+const junkfiles = "assests/images/junk files.png";
+const key3d = "assests/images/Key 3d.png";
+const optimization = "assests/images/optimization.png";
+const playstore = "assests/images/playstore.png";
+const profile = "assests/images/Profile.png";
+const setting = "assests/images/setting.png";
