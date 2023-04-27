@@ -2,6 +2,11 @@ import 'package:defender/consts/colors.dart';
 import 'package:defender/consts/images.dart';
 import 'package:defender/consts/strings.dart';
 import 'package:defender/consts/styles.dart';
+import 'package:defender/views/dashboard_screens/components/allicon_buttons.dart';
+import 'package:defender/views/dashboard_screens/components/boost_button.dart';
+import 'package:defender/views/dashboard_screens/components/bottom_navigationbar.dart';
+import 'package:defender/views/dashboard_screens/components/myicons.dart';
+import 'package:defender/views/dashboard_screens/components/ram_memory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -15,112 +20,62 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       backgroundColor: white,
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        color: Colors.amber,
+        child: BottomNavigation(
+          currentIndex: currentIndex,
+          onTap: (int index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+        ),
+      ),
       body: Container(
-        constraints: const BoxConstraints.expand(),
+        // constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
             image:
-                DecorationImage(image: AssetImage(bgimg), fit: BoxFit.cover)),
+                DecorationImage(image: AssetImage(bgImg), fit: BoxFit.cover,)),
         padding: const EdgeInsets.only(top: 30),
         child: Column(
           children: [
-            Column(
-              children: const [
-                Text(
-                  appname,
-                  style: TextStyle(
-                      color: white,
-                      fontSize: 28.0,
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.none),
-                ),
-              ],
+             const Padding(
+               padding: EdgeInsets.symmetric(vertical: 25, horizontal: 10),
+               child: Text(
+                appname,
+                style: TextStyle(
+                    color: white,
+                    fontSize: 28.0,
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.none),
+                         ),
+             ),
+             Row(
+               children: const [
+                 Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: RamMemory(),
             ),
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                          margin:const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                          height: 40,
-                          width: 40,
-                          decoration: const BoxDecoration(
-                            color: green,
-                            boxShadow: [
-                              BoxShadow(
-                                color: gblue,
-                                blurRadius: 5.0,
-                                offset: Offset(
-                                  0.0, // Move to right 5  horizontally
-                                  5.0, // Move to bottom 5 Vertically
-                                ),
-                              )
-                            ],
-                          )),
-                      Column(
-                        crossAxisAlignment:CrossAxisAlignment.start ,
-                        children:  const [
-                           Text(
-                            ramGB,
-                            style: TextStyle(fontSize: 20, color: white, fontFamily:bold),
-                          ),
-                          Text(
-                            fram,
-                            style: TextStyle(fontSize: 15, color: gblue, fontFamily:regular),
-                          ),
-                        ],
-
-                      ),
-                    ],
-                  ),
-                  Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                          margin:const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                          height: 40,
-                          width: 40,
-                          decoration: const BoxDecoration(
-                            color: orange,
-                            boxShadow: [
-                              BoxShadow(
-                                color: gblue,
-                                blurRadius: 5.0,
-                                offset: Offset(
-                                  0.0, // Move to right 5  horizontally
-                                  5.0, // Move to bottom 5 Vertically
-                                ),
-                              )
-                            ],
-                          )),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:  const [
-                           Text(
-                            memoryGB,
-                            style: TextStyle(fontSize: 20, color: white, fontFamily:bold),
-                          ),
-                          Text(
-                            fmemory,
-                            style: TextStyle(fontSize: 15, color: gblue, fontFamily:regular),
-                          ),
-                        ],
-
-                      ),
-                    ],
-                  )
-                ],
-              ),
+               
+               Padding(
+                 padding: EdgeInsets.all(12.0),
+                 child: BoostButton(),
+               )],
+             ),
+            
+             const Expanded(
+              
+              child: MyIcons(),
             )
           ],
         ),
+        
       ),
     );
   }
