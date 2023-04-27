@@ -46,7 +46,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         child: Column(
           children: [
              const Padding(
-               padding: EdgeInsets.symmetric(vertical: 25, horizontal: 10),
+               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                child: Text(
                 appname,
                 style: TextStyle(
@@ -57,15 +57,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
                          ),
              ),
              Row(
-               children: const [
-                 Padding(
-                  padding: EdgeInsets.all(20.0),
+               children:  [
+                 const Padding(
+                  padding: EdgeInsets.all(16.0),
                   child: RamMemory(),
             ),
                
                Padding(
-                 padding: EdgeInsets.all(12.0),
-                 child: BoostButton(),
+                 padding: const EdgeInsets.all(4.0),
+                 child: Center(
+                  child: Transform.scale(
+                    scale: 1.2,
+                    child:const BoostButton(),
+                  ),
+                  ),
                )],
              ),
             

@@ -16,5 +16,6 @@ const decoratedBox = BoxDecoration(
 const white = Colors.white;
 const orange = Colors.orange;
 const green = Colors.green;
+const lgreen = Color.fromARGB(255, 138, 236, 142);
 const gblue = Color.fromARGB(255, 50, 62, 68);
 const lblue = Color.fromARGB(255, 185, 224, 250);

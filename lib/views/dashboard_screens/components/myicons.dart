@@ -14,7 +14,7 @@ class MyIcons extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 3,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 70),
       children: [
         Column(
           children: [

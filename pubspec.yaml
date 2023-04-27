@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   material: ^1.0.0+2
   get: ^4.6.5
+  percent_indicator: ^4.0.1
+  syncfusion_flutter_gauges: ^20.3.58
+  circular_countdown_timer: ^0.2.2
+  stop_watch_timer: ^2.0.0
 
 dev_dependencies:
   flutter_test:
